@@ -25,9 +25,11 @@ Plugin 'gmarik/Vundle.vim'
 " " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
 "
-Plugin 'bling/vim-airline'
-" Plugin 'bzx/vim-theme-pack'
+" Plugin 'bling/vim-airline'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/nerdtree'
+Plugin 'klen/python-mode'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,13 +58,15 @@ syntax on
 
 set tabstop=4					" number of visual spaces per TAB
 set softtabstop=4				" number of spaces in tab when editing
-" Color
+set autochdir
+
+" Color ----------------------
 colorscheme molokai
 
 " GUI ====================================================
 set number 					" show line numbers
 set showcmd					" show command in bottom bar
-" set cursorline					" highlight current line
+set cursorline					" highlight current line
 set wildmenu					" visual autocomplete for command menu
 set lazyredraw					" redraw only when we need to.
 set showmatch					" highlight matching [{()}]
@@ -73,4 +77,5 @@ set hlsearch					" highlight matches
 " Clear match hightlighting
 nnoremap <leader><space> :nohlsearch<CR>
 
-
+" NerdTree
+map <F2> :NERDTreeToggle<CR>
