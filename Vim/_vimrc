@@ -11,7 +11,7 @@ set softtabstop=4				" number of spaces in tab when editing
 " GUI ====================================================
 set number 					" show line numbers
 set showcmd					" show command in bottom bar
-set cursorline					" highlight current line
+" set cursorline					" highlight current line
 set wildmenu					" visual autocomplete for command menu
 set lazyredraw					" redraw only when we need to.
 set showmatch					" highlight matching [{()}]
@@ -48,6 +48,8 @@ Plugin 'gmarik/Vundle.vim'
 " " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
 "
+Plugin 'bling/vim-airline'
+
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -62,3 +64,6 @@ filetype plugin indent on    " required
 " "
 " " see :h vundle for more details or wiki for FAQ
 " " Put your non-Plugin stuff after this line
+
+" airline ------
+set laststatus=2
