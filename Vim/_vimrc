@@ -1,26 +1,3 @@
-let mapleader = ","
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-syntax on
-
-set tabstop=4					" number of visual spaces per TAB
-set softtabstop=4				" number of spaces in tab when editing
-
-" GUI ====================================================
-set number 					" show line numbers
-set showcmd					" show command in bottom bar
-" set cursorline					" highlight current line
-set wildmenu					" visual autocomplete for command menu
-set lazyredraw					" redraw only when we need to.
-set showmatch					" highlight matching [{()}]
-
-" Searching ==============================================
-set incsearch					" search as characters are entered
-set hlsearch					" highlight matches
-" Clear match hightlighting
-nnoremap <leader><space> :nohlsearch<CR>
 
 " Vundle =================================================
 " set the runtime path to include Vundle and initialize
@@ -49,6 +26,8 @@ Plugin 'gmarik/Vundle.vim'
 " Plugin 'user/L9', {'name': 'newL9'}
 "
 Plugin 'bling/vim-airline'
+" Plugin 'bzx/vim-theme-pack'
+Plugin 'flazz/vim-colorschemes'
 
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -67,3 +46,31 @@ filetype plugin indent on    " required
 
 " airline ------
 set laststatus=2
+
+" Common ==============================================
+let mapleader = "," 
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+syntax on
+
+set tabstop=4					" number of visual spaces per TAB
+set softtabstop=4				" number of spaces in tab when editing
+" Color
+colorscheme molokai
+
+" GUI ====================================================
+set number 					" show line numbers
+set showcmd					" show command in bottom bar
+" set cursorline					" highlight current line
+set wildmenu					" visual autocomplete for command menu
+set lazyredraw					" redraw only when we need to.
+set showmatch					" highlight matching [{()}]
+
+" Searching ==============================================
+set incsearch					" search as characters are entered
+set hlsearch					" highlight matches
+" Clear match hightlighting
+nnoremap <leader><space> :nohlsearch<CR>
+
+
