@@ -56,20 +56,23 @@ filetype plugin indent on    " required
 set laststatus=2
 
 " Common ==============================================
-let mapleader = "," 
-let g:mapleader = ","
-set autoread			" Set to auto read when a file is changed from the outside
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
+filetype off                        " required
 syntax on
 
-set tabstop=4					" number of visual spaces per TAB
-set softtabstop=4				" number of spaces in tab when editing
+let mapleader = "," 
+let g:mapleader = ","
+
+set autoread                        " Set to auto read when a file is changed from the outside
+set nocompatible                    " be iMproved, required
+set wildignore=*.o,*~,*.pyc         " Ignore compiled files
+set so=3                            " Set 3 lines to the cursor - when moving vertically using j/k
+set expandtab                       " Use spaces instead of tabs
+set tabstop=4                       " number of visual spaces per TAB
+set softtabstop=4                   " number of spaces in tab when editing
 set autochdir
 
 " Color ----------------------
-colorscheme desert
+colorscheme molokai
 
 " GUI ====================================================
 set number 					" show line numbers
@@ -119,4 +122,8 @@ else
 endif 
 language message zh_CN.utf-8
 
-
+" Smart way to move between windows
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-h> <C-w>h
+map <C-l> <C-w>l
