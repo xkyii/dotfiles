@@ -1,0 +1,54 @@
+
+# export PATH="/usr/local/bin:$PATH"
+export PATH="/Users/vkyii/.multirust/toolchains/stable/cargo/bin:$PATH"
+# export PATH="/Users/vkyii/.cargo/bin:$PATH"
+
+# after install pyenv
+eval "$(pyenv init -)"
+export PYTHON_BUILD_MIRROR_URL="http://pyenv.qiniudn.com/pythons/"
+
+# after install rbenv
+eval "$(rbenv init -)"
+
+# after install homebrew
+export HOMEBREW_GITHUB_API_TOKEN=6b3d4908a0db7bbcab2699b24452bb71ef68d127
+#. /Users/vkyii/.pyenv/versions/3.5.0/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
+
+# after install php-version
+#source $(brew --prefix php-version)/php-version.sh && php-version 5
+
+# after install phpbrew
+source $HOME/.phpbrew/bashrc
+
+# rust
+export RUST_SRC_PATH="/Users/vkyii/Documents/Code/rust/src/"
+
+# alias
+alias vscode="/opt/homebrew-cask/Caskroom/visual-studio-code/0.10.5/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
+
+
+# toggle iTerm Dock icon
+# add this to your .bash_profile or .zshrc
+function toggleiTerm() {
+	pb='/usr/libexec/PlistBuddy'
+	iTerm='/opt/homebrew-cask/Caskroom/iterm2/2.1.4/iTerm.app/Contents/Info.plist'
+	
+	echo "Do you wish to hide iTerm in Dock?"
+	select ync in "Hide" "Show" "Cancel"; do
+	    case $ync in
+	        'Hide' )
+	        	$pb -c "Add :LSUIElement bool true" $iTerm
+	        	echo "relaunch iTerm to take effectives"
+	        	break
+	        	;;
+	        'Show' )
+	        	$pb -c "Delete :LSUIElement" $iTerm
+	        	echo "run killall 'iTerm' to exit, and then relaunch it"
+	        	break
+	        	;;
+		'Cancel' )
+			break
+			;;
+	    esac
+	done
+}
