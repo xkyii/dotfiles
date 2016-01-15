@@ -8,4 +8,4 @@ all: symlinks
 symlinks:
 	@ln -sf $(DIR)/osx/bashrc ~/.bashrc
 	@ln -sf $(DIR)/zsh/zshrc ~/.zshrc
-	@ln -s  $(DIR)/nvim ~/.config/nvim
+	@ln -sf  $(DIR)/nvim ~/.config/nvim
