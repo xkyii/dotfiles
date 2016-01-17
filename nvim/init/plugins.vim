@@ -38,7 +38,8 @@ endif
 
 " NERDTree {
 if isdirectory(expand("~/.config/nvim/plugged/nerdtree"))
-    map <C-e> <plug>NERDTreeTabsToggle<CR>
+    nmap <leader>ee <plug>NERDTreeTabsToggle<CR>
+    nmap <leader>ef <plug>NERDTreeTabsFind<CR>
     let g:NERDShutUp=1
     let NERDTreeShowBookmarks=1
     let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$', '\.DS_Store']

@@ -46,4 +46,7 @@ onoremap <C-k>a <C-C>gggH<C-O>G
 snoremap <C-k>a <C-C>gggH<C-O>G
 xnoremap <C-k>a <C-C>ggVG
 
+" Test
+" nnoremap <M-s> :update<CR>
+" nnoremap <D-s> :update<CR>
 
