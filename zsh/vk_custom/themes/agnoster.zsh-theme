@@ -70,7 +70,7 @@ prompt_end() {
   else
     echo -n "%{%k%}"
   fi
-  echo -n "%{%f%}\n❯"
+  echo -n "%{%f%}"
   CURRENT_BG=''
 }
 
@@ -83,6 +83,14 @@ prompt_context() {
     #prompt_segment black default "%(!.%{%F{yellow}%}.)$USER@%m"
     prompt_segment black yellow "%(!.%{%F{yellow}%}.)[$USER]"
   fi
+}
+
+prompt_pre() {
+  echo -n "╭─"
+}
+
+prompt_post() {
+  echo -n "\n╰─➤"
 }
 
 # Git: branch/detached head, dirty status
@@ -193,6 +201,7 @@ prompt_status() {
 ## Main prompt
 build_prompt() {
   RETVAL=$?
+  prompt_pre
   prompt_status
   prompt_virtualenv
   prompt_context
@@ -200,6 +209,7 @@ build_prompt() {
   prompt_git
   prompt_hg
   prompt_end
+  prompt_post
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
