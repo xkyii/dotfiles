@@ -25,6 +25,7 @@ if count(g:vk_plug_group, 'general')
     " CtrlP 跳转
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'tacahiroy/ctrlp-funky'
+    Plug 'rking/ag.vim'
 
     " 大量Vim主题配色
     Plug 'flazz/vim-colorschemes'
@@ -55,6 +56,8 @@ endif
     Plug 'honza/vim-snippets'
     " 自动匹对[](){}等
     Plug 'jiangmiao/auto-pairs'
+    " 彩虹括号
+    Plug 'luochen1990/rainbow'
 
     " css配色
     Plug 'ap/vim-css-color', { 'for': ['css'] }
@@ -89,8 +92,6 @@ endif
 " 选择代码块
 "Plug 'gcmt/wildfire.vim'
 
-" 彩虹括号...大概看lisp会好用吧
-"Plug 'luochen1990/rainbow'
 
 " }
 

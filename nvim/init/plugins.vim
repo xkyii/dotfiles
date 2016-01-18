@@ -56,7 +56,7 @@ endif
 
 
 " Tagbar {
-    nnoremap <leader>tt :TagbarToggle<CR>
+    nnoremap <leader>et :TagbarToggle<CR>
 " }
 
 
@@ -144,5 +144,11 @@ endif
         nnoremap <C-_> :Commentary <CR>
         vnoremap <C-_> :Commentary <CR>gv
         inoremap <C-_> <c-o>:Commentary <CR>
+    endif
+" }
+
+" Rainbow {
+    if isdirectory(expand("~/.vim/bundle/rainbow"))
+        let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
     endif
 " }
