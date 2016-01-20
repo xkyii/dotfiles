@@ -1,0 +1,13 @@
+// Place your settings in this file to overwrite default and user settings.
+// Global:  /Users/vkyii/Library/Application Support/Code/User/settings.json
+// Project: project_root/.vscode
+{
+	// Controls the font family.
+	//"editor.fontFamily": "WenQuanYi Zen Hei Mono",
+	"editor.fontFamily": "Ubuntu Mono",
+
+	// Controls the font size.
+	// "editor.fontSize": 14,
+
+	"git.enabled": false
+}
