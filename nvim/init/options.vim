@@ -60,6 +60,10 @@
 
     set cursorline                  " Highlight current line
     set cursorcolumn                " Highlight current column
+
+    "autocmd CursorMoved * exe exists("HlUnderCursor")?HlUnderCursor?printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\')):'match none':""
+    "let HlUnderCursor=1
+
     set fillchars=vert:│
     highlight VertSplit cterm=NONE ctermfg=NONE ctermbg=NONE
 
@@ -103,4 +107,8 @@
     "let $NVIM_TUI_ENABLE_TRUE_COLOR=1       " True gui colors in terminal
 
 " }
-" 
+
+" Json(Buildin) {
+    " 改变注释的背景色
+    highlight jsonCommentError ctermfg=2 ctermbg=233 guifg=#CAE682 guibg=#242424
+" }
