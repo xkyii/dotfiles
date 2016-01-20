@@ -64,8 +64,10 @@
     "autocmd CursorMoved * exe exists("HlUnderCursor")?HlUnderCursor?printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\')):'match none':""
     "let HlUnderCursor=1
 
+    highlight NonText cterm=NONE ctermbg=NONE ctermfg=0
+
     set fillchars=vert:│
-    highlight VertSplit cterm=NONE ctermfg=NONE ctermbg=NONE
+    highlight VertSplit cterm=NONE ctermfg=239 ctermbg=NONE
 
     highlight CursorLine   cterm=NONE ctermbg=235 ctermfg=NONE
     highlight CursorColumn   cterm=NONE ctermbg=235 ctermfg=NONE
@@ -75,7 +77,6 @@
     highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000  "高亮提示框
     highlight Folded guibg=grey guifg=blue ctermfg=100 ctermbg=0
     highlight FoldColumn guibg=darkgrey guifg=white ctermfg=100 ctermbg=0
-
 
     if has('cmdline_info')
         set ruler                   " Show the ruler
