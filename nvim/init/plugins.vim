@@ -89,7 +89,7 @@ if isdirectory(expand("~/.config/nvim/plugged/vim-airline"))
     endif
 
     " 开启tabline
-    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#enabled = 0
     " tabline中当前buffer两端的分隔字符
     let g:airline#extensions#tabline#left_sep = ' '
     " tabline中未激活buffer两端的分隔字符
