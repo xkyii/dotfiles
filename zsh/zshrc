@@ -84,6 +84,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+autoload bashcompinit
+bashcompinit
+ 
+# The following lines were added by compinstall
+zstyle :compinstall filename '/Users/vkyii/.zshrc'
+
+# autoload -U compinit
+# compinstall
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+
 if [ -f ~/.bashrc ] ; then
 	[ -r ~/.bashrc ] && source ~/.bashrc
 fi

@@ -1,5 +1,5 @@
 
-DIR=/Users/vkyii/Documents/Code/dotfiles
+DIR=$(shell pwd)
 
 
 all: symlinks
