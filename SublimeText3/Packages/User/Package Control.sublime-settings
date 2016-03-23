@@ -9,6 +9,9 @@
 		"ConvertToUTF8",
 		"nginx",
 		"Package Control",
-		"SFTP"
+		"Rust",
+		"RustAutoComplete",
+		"SFTP",
+		"TOML"
 	]
 }
