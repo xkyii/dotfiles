@@ -5,13 +5,21 @@
 	],
 	"installed_packages":
 	[
+		"BeautifyRust",
 		"Codecs33",
 		"ConvertToUTF8",
+		"GitGutter",
+		"Markdown Extended",
+		"MarkdownEditing",
+		"Monokai Extended",
 		"nginx",
+		"OmniMarkupPreviewer",
 		"Package Control",
 		"Rust",
 		"RustAutoComplete",
 		"SFTP",
+		"SublimeLinter",
+		"SublimeLinter-contrib-rustc",
 		"TOML"
 	]
 }
