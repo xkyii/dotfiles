@@ -26,6 +26,7 @@ export RUST_SRC_PATH="/Users/vkyii/Documents/Code/rust/src/"
 # alias
 alias vscode="/opt/homebrew-cask/Caskroom/visual-studio-code/0.10.5/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
 alias vlc="/opt/homebrew-cask/Caskroom/vlc/2.2.2/VLC.app/Contents/MacOS/VLC"
+alias subl='reattach-to-user-namespace subl'
 
 # android
 export ANDROID_HOME="/usr/local/opt/android-sdk"

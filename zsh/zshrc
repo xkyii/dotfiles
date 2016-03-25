@@ -52,6 +52,13 @@ ZSH_CUSTOM=$ZSH/vk_custom
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
 
+# z More on this in the next section!
+# extract Unzip all types of compressed files.
+# Enables a number of Finder commands that are accessible via the terminal.
+# brew Adds autocompletion and descriptions for all Brew commands.
+# 	brew + tab
+plugins=(z brew extract osx)
+
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
