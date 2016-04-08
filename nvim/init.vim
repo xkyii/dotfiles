@@ -36,6 +36,9 @@ if count(g:vk_plug_group, 'general')
     " 输入法自动切换
     Plug 'CodeFalling/fcitx-vim-osx'
 
+    " 自动加载
+    Plug 'djoshea/vim-autoread'
+
     " Vim UI
     Plug 'scrooloose/nerdtree'
     Plug 'jistr/vim-nerdtree-tabs'
