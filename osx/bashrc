@@ -66,3 +66,6 @@ fi
 
 # password-store
 source /usr/local/etc/bash_completion.d/password-store
+
+# ssh for bitbucket
+ssh-add ~/.ssh/id_bitbucket_vkyii
