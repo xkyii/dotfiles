@@ -17,7 +17,7 @@ def read_config():
     cf.read(CONFIG_FILE)
 
     qiniu_section = 'qiniu'
-    keys = ('ak', 'sk', 'url', 'bucket', 'prefix', 'assets')
+    keys = ('ak', 'sk', 'url', 'bucket', 'local')
     try:
         res = map(lambda x: cf.get(qiniu_section, x), keys)
     except ConfigParser.NoOptionError:
@@ -40,7 +40,6 @@ def generate_config_file():
     sk=七牛图床的Secret Key
     url=七牛图床地址
     bucket=七牛图床空间名
-    prefix=七牛图床资源前缀名
     local=本地存储目录'''
     with open(CONFIG_FILE, 'w') as fp:
         fp.write(textwrap.dedent(config_file_init_content))
