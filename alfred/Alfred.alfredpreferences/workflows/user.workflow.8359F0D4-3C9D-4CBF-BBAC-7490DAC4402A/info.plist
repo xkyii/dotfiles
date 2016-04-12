@@ -30,6 +30,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>BFDF4168-77CE-47F2-AA9F-9D897816E273</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A190910C-1784-41B7-9CDD-6C796907116A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>weishu</string>
@@ -44,10 +55,35 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>/Users/vkyii/.pyenv/versions/2.7.10/bin/python2.7 ./save_img.py -u</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8BFF9926-79DA-413A-A4EB-63DB997DF739</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
 				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>9</integer>
+				<key>hotmod</key>
+				<integer>1179648</integer>
+				<key>hotstring</key>
+				<string>V</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -65,59 +101,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>mdimgsetup</string>
+				<key>subtext</key>
+				<string>设置markdown图片上传图床的信息</string>
+				<key>text</key>
+				<string>markdown img设置</string>
+				<key>withspace</key>
 				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string># coding: utf-8
-from clipboard import get_paste_img_file
-from upload import upload_qiniu
-import util
-import os
-import subprocess
-import sys
-import time
-
-if not os.path.exists(util.CONFIG_FILE):
-    util.generate_config_file()
-
-config = util.read_config()
-if not config:
-    util.notice('请先设置你的七牛图床信息')
-    util.open_with_editor(util.CONFIG_FILE)
-    sys.exit(0)
-
-url = '%s/%s' % (config['url'], config['prefix'])
-
-img_file, need_format, format = get_paste_img_file()
-if img_file:
-    # has image
-
-    # use time to generate a unique upload_file name, we can not use the tmp file name
-    upload_name = "%s.%s" % (int(time.time() * 1000), format) 
-    if need_format:
-        size_str = subprocess.check_output('sips -g pixelWidth %s | tail -n1 | cut -d" " -f4' % img_file.name, shell=True)
-        size = int(size_str.strip()) / 2
-        markdown_url = '&lt;img src="%s/%s" width="%d"/&gt;' % (url, upload_name, size)
-    else:
-        markdown_url = '%s/%s' % (url, upload_name)
-
-    # make it to clipboard
-    os.system("echo '%s' | pbcopy" % markdown_url)
-    os.system('osascript -e \'tell application "System Events" to keystroke "v" using command down\'')
-    upload_file = util.try_compress_png(img_file, format!='gif')
-    if not upload_qiniu(upload_file.name, upload_name): util.notice("上传图片到图床失败，请检查网络后重试")
-else:
-    util.notice("剪切版里没有图片！")
-    </string>
-				<key>type</key>
-				<integer>3</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>8BFF9926-79DA-413A-A4EB-63DB997DF739</string>
+			<string>BE152935-4073-489A-8624-D4410C803C1B</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -150,20 +148,74 @@ util.open_with_editor(util.CONFIG_FILE)</string>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>2</integer>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
 				<key>keyword</key>
-				<string>mdimgsetup</string>
-				<key>subtext</key>
-				<string>设置markdown图片上传图床的信息</string>
-				<key>text</key>
-				<string>markdown img设置</string>
-				<key>withspace</key>
+				<string>mi</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
 				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>"s" save to local, "u" upload to server</string>
+				<key>script</key>
+				<string>#!/bin/sh
+
+#check the input and display the relative title
+PAR={query}
+if [ $PAR = "s" ] ; then
+	title="Save to local"
+elif [ $PAR = "u" ]; then
+	title="Upload to server"
+elif [ $PAR = "a" ]; then
+	title="Save to local And Upload to server"
+else
+	title="Parameter not correct"
+fi
+
+echo '&lt;?xml version="1.0"?&gt;&lt;items&gt;'
+echo "&lt;item arg=\"{query}\" uid=\"ssid\" valid=\"yes\"&gt;"
+echo "&lt;title&gt;$title&lt;/title&gt;"
+echo "&lt;subtitle&gt;$subtitle&lt;/subtitle&gt;"
+echo "&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;&lt;/items&gt;"
+echo "&lt;/items&gt;"</string>
+				<key>subtext</key>
+				<string>Save image to local or server</string>
+				<key>title</key>
+				<string>Markdown Image Saver</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>BE152935-4073-489A-8624-D4410C803C1B</string>
+			<string>BFDF4168-77CE-47F2-AA9F-9D897816E273</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>/Users/vkyii/.pyenv/versions/2.7.10/bin/python2.7 ./save_img.py -"{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A190910C-1784-41B7-9CDD-6C796907116A</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -177,6 +229,11 @@ util.open_with_editor(util.CONFIG_FILE)</string>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
+		<key>A190910C-1784-41B7-9CDD-6C796907116A</key>
+		<dict>
+			<key>ypos</key>
+			<real>270</real>
+		</dict>
 		<key>AFB4A236-0658-4EC5-BA89-1CCF93C2A4A3</key>
 		<dict>
 			<key>ypos</key>
@@ -186,6 +243,11 @@ util.open_with_editor(util.CONFIG_FILE)</string>
 		<dict>
 			<key>ypos</key>
 			<real>150</real>
+		</dict>
+		<key>BFDF4168-77CE-47F2-AA9F-9D897816E273</key>
+		<dict>
+			<key>ypos</key>
+			<real>270</real>
 		</dict>
 		<key>D8445579-037E-4FFF-84EA-61E88AF60C5A</key>
 		<dict>

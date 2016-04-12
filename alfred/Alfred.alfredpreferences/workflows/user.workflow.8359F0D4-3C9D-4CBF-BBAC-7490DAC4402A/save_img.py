@@ -53,23 +53,28 @@ if __name__ == '__main__':
     upload_file = util.try_compress_png(img_file, format != 'gif')
 
     if arguments['--save']:
-        fname = date.today().strftime("{0}/%Y%m%d/{1}".format(config['local'], upload_name))
-        _ensure_dir(fname)
-        with open(fname, 'wb+') as f:
+        fname = date.today().strftime("img/%Y.%m/%d.{0}".format(upload_name))
+        fpath = '%s/%s' % (config['assets'], fname)
+        _ensure_dir(fpath)
+        with open(fpath, 'wb+') as f:
             shutil.copy(upload_file.name, f.name)
+            # make it to clipboard
+            os.system("echo '%s' | pbcopy" % fname)
+            # os.system('osascript -e \'tell application "System Events" to keystroke "v" using command down\'')
 
     if arguments['--upload']:
         if upload_qiniu(upload_file.name, upload_name):
             url = '%s/%s' % (config['url'], config['prefix'])
-            if need_format:
-                size_str = subprocess.check_output('sips -g pixelWidth %s | tail -n1 | cut -d" " -f4' % img_file.name, shell=True)
-                size = int(size_str.strip()) / 2
-                markdown_url = '<img src="%s/%s" width="%d"/>' % (url, upload_name, size)
-            else:
-                markdown_url = '%s/%s' % (url, upload_name)
+
+            # if need_format:
+            #     size_str = subprocess.check_output('sips -g pixelWidth %s | tail -n1 | cut -d" " -f4' % img_file.name, shell=True)
+            #     size = int(size_str.strip()) / 2
+            #     markdown_url = '<img src="%s/%s" width="%d"/>' % (url, upload_name, size)
+            # else:
+            #     markdown_url = '%s/%s' % (url, upload_name)
 
             # make it to clipboard
-            os.system("echo '%s' | pbcopy" % markdown_url)
-            os.system('osascript -e \'tell application "System Events" to keystroke "v" using command down\'')
+            os.system("echo '%s' | pbcopy" % '%s/%s' % (url, upload_name))
+            # os.system('osascript -e \'tell application "System Events" to keystroke "v" using command down\'')
         else:
             util.notice("上传图片到图床失败，请检查网络后重试")
