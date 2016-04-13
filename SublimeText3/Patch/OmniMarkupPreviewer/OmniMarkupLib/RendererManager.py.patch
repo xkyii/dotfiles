@@ -1,4 +1,0 @@
-283a284
->             url = re.sub(r'{{\s*site.img_url\s*}}', '../../assets/img', url)
-304a306
-> 

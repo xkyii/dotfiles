@@ -1,6 +1,6 @@
 
 DIR=$(shell pwd)
-SublimeDIR=~/Library/Application\ Support/Sublime\ Text\ 3
+Sublime3DIR=~/Library/Application\ Support/Sublime\ Text\ 3
 
 
 all: symlinks
@@ -15,8 +15,11 @@ symlinks:
 	@ln -sf $(DIR)/SublimeText3/Packages/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 	@echo "make symlinks DONE!"
 
+diff:
+	@diff $(Sublime3DIR)/Packages/OmniMarkupPreviewer $(DIR)/SublimeText3/OmniMarkupPreviewer  > $(DIR)/SublimeText3/Patch/OmniMarkupPreviewer.patch -rupN
+
 patch:
-	@patch  $(SublimeDIR)/Packages/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py < $(DIR)/SublimeText3/Patch/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py.patch
+	@patch -d $(Sublime3DIR)/Packages/OmniMarkupPreviewer -p0 < $(DIR)/SublimeText3/Patch/OmniMarkupPreviewer.patch
 
 unpatch:
-	@patch  $(SublimeDIR)/Packages/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py < $(DIR)/SublimeText3/Patch/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py.patch -R
+	@patch -d $(Sublime3DIR)/Packages/OmniMarkupPreviewer -p0 < $(DIR)/SublimeText3/Patch/OmniMarkupPreviewer.patch -R
