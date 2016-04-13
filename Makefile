@@ -1,5 +1,6 @@
 
 DIR=$(shell pwd)
+SublimeDIR=~/Library/Application\ Support/Sublime\ Text\ 3
 
 
 all: symlinks
@@ -13,3 +14,9 @@ symlinks:
 	@ln -sf $(DIR)/tmux/tmux.conf ~/.tmux.conf
 	@ln -sf $(DIR)/SublimeText3/Packages/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 	@echo "make symlinks DONE!"
+
+patch:
+	@patch  $(SublimeDIR)/Packages/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py < $(DIR)/SublimeText3/Patch/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py.patch
+
+unpatch:
+	@patch  $(SublimeDIR)/Packages/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py < $(DIR)/SublimeText3/Patch/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py.patch -R
