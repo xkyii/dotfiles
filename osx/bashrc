@@ -10,6 +10,9 @@ export PYTHON_BUILD_MIRROR_URL="http://pyenv.qiniudn.com/pythons/"
 # after install rbenv
 eval "$(rbenv init -)"
 
+# after install anyenv
+eval "$(anyenv init -)"
+
 # after install homebrew
 export HOMEBREW_GITHUB_API_TOKEN=6b3d4908a0db7bbcab2699b24452bb71ef68d127
 export HOMEBREW_EDITOR=nvim
