@@ -7,7 +7,9 @@
 	[
 		"BeautifyRust",
 		"Codecs33",
+		"ColorPicker",
 		"ConvertToUTF8",
+		"Emmet",
 		"GitGutter",
 		"LiveReload",
 		"Markdown Extended",
@@ -21,6 +23,7 @@
 		"SFTP",
 		"SublimeLinter",
 		"SublimeLinter-contrib-rustc",
+		"SyncedSidebarBg",
 		"TOML"
 	]
 }
