@@ -13,6 +13,7 @@ symlinks:
 	@ln -sf $(DIR)/nvim ~/.config/
 	@ln -sf $(DIR)/tmux/tmux.conf ~/.tmux.conf
 	@ln -sf $(DIR)/SublimeText3/Packages/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+	@ln -sf $(DIR)/SublimeText3/Packages/Rust ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 	@echo "make symlinks DONE!"
 
 diff:

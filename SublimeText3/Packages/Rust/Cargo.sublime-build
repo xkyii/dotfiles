@@ -1,0 +1,32 @@
+{
+    "cmd": ["cargo", "build"],
+    "selector": "source.rust",
+    "file_regex": "^(.*?):([0-9]+):([0-9]+):\\s[0-9]+:[0-9]+\\s(.*)$",
+    "syntax": "Cargo.build-language",
+    "osx":
+    {
+        "env": {
+            "RUST_LOG": "singular=debug"
+        },
+        "path": "/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+    },
+    
+    "variants": [
+        {
+            "cmd": ["cargo", "run"],
+            "name": "Run"
+        },
+        {
+            "cmd": ["cargo", "test"],
+            "name": "Test"
+        },
+        {
+            "cmd": ["cargo", "bench"],
+            "name": "Bench"
+        },
+        {
+            "cmd": ["cargo", "clean"],
+            "name": "Clean"
+        }
+    ]
+}
