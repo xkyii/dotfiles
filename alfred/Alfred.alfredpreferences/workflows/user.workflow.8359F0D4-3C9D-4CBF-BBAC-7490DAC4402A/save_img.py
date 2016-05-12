@@ -18,7 +18,6 @@ from clipboard import get_paste_img_file
 from upload import upload_qiniu
 import util
 import os
-import subprocess
 import sys
 import time
 from datetime import date
@@ -70,4 +69,6 @@ if __name__ == '__main__':
             # os.system('osascript -e \'tell application "System Events" to keystroke "v" using command down\'')
         else:
             util.notice("上传图片到图床失败，请检查网络后重试")
+
+    img_file.close()
 

@@ -3,10 +3,12 @@ import os
 import tempfile
 import imghdr
 import shutil
+import re
+import urllib
 
 from AppKit import NSPasteboard, NSPasteboardTypePNG,\
         NSPasteboardTypeTIFF, NSPasteboardTypeString,\
-        NSFilenamesPboardType
+        NSFilenamesPboardType, NSStringPboardType
 
 # image_file, need_format, need_compress
 NONE_IMG = (None, False, None)
@@ -53,7 +55,24 @@ def get_paste_img_file():
     if NSPasteboardTypeString in data_type:
         # make this be first, because plain text may be TIFF format?
         # string todo, recognise url of png & jpg
-        pass
+        pbstring = str(pb.dataForType_(NSPasteboardTypeString))
+        m = re.match('^(http|https)://.*/(.*.(png|jpg|gif))$', pbstring)
+        if m:
+            img = urllib.urlopen(pbstring).read()
+
+            img_type = m.group(3)
+            is_gif = img_type == 'gif'
+
+            _file = tempfile.NamedTemporaryFile(suffix=img_type)
+            tmp_clipboard_img_file = tempfile.NamedTemporaryFile()
+            open(tmp_clipboard_img_file.name, 'wb').write(img)
+
+            if not is_gif:
+                _convert_to_png(tmp_clipboard_img_file.name, _file.name)
+            else:
+                shutil.copy(tmp_clipboard_img_file.name, _file.name)
+            tmp_clipboard_img_file.close()
+            return _file, False, 'gif' if is_gif else 'png'
 
     if any(filter(lambda f: f in data_type, supported_image_format)):
         # do not care which format it is, we convert it to png finally
