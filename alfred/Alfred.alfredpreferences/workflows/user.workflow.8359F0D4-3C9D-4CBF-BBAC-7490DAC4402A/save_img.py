@@ -3,13 +3,14 @@
 """Save image.
 
 Usage:
-  save_img.py [--save] [--upload] [--version]
+  save_img.py [--pri] [--pub] [--qn] [--version]
 
 Options:
   -h --help     Show this screen.
   -v --version  Show version.
-  -s --save     Save as local file.
-  -u --upload   Upload to Qiniu server.
+  --pri         Save to [config.private_path]
+  --pub         Save to [config.public_path]
+  --qn          Upload to qiniu Server [config.url]
 """
 
 
@@ -52,8 +53,8 @@ if __name__ == '__main__':
     # make it to clipboard
     upload_file = util.try_compress_png(img_file, format != 'gif')
 
-    if arguments['--save']:
-        fpath = '%s/%s' % (config['local'], upload_name)
+    if arguments['--pri']:
+        fpath = '%s/%s' % (config['private_path'], upload_name)
         _ensure_dir(fpath)
         with open(fpath, 'wb+') as f:
             shutil.copy(upload_file.name, f.name)
@@ -61,7 +62,16 @@ if __name__ == '__main__':
             os.system("echo '%s' | pbcopy" % "assets/img/%s" % upload_name)
             # os.system('osascript -e \'tell application "System Events" to keystroke "v" using command down\'')
 
-    if arguments['--upload']:
+    if arguments['--pub']:
+        fpath = '%s/%s' % (config['public_path'], upload_name)
+        _ensure_dir(fpath)
+        with open(fpath, 'wb+') as f:
+            shutil.copy(upload_file.name, f.name)
+            # make it to clipboard
+            os.system("echo '%s' | pbcopy" % "assets/img/%s" % upload_name)
+            # os.system('osascript -e \'tell application "System Events" to keystroke "v" using command down\'')
+
+    if arguments['--qn']:
         if upload_qiniu(upload_file.name, upload_name):
             url = '%s/%s' % (config['url'], upload_name)
             # make it to clipboard

@@ -17,7 +17,7 @@ def read_config():
     cf.read(CONFIG_FILE)
 
     qiniu_section = 'qiniu'
-    keys = ('ak', 'sk', 'url', 'bucket', 'local')
+    keys = ('ak', 'sk', 'url', 'bucket', 'local', 'private_path', 'public_path')
     try:
         res = map(lambda x: cf.get(qiniu_section, x), keys)
     except ConfigParser.NoOptionError:

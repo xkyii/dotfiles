@@ -55,25 +55,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>/Users/vkyii/.pyenv/versions/2.7.10/bin/python2.7 ./save_img.py -u</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>8BFF9926-79DA-413A-A4EB-63DB997DF739</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -101,21 +82,19 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>mdimgsetup</string>
-				<key>subtext</key>
-				<string>设置markdown图片上传图床的信息</string>
-				<key>text</key>
-				<string>markdown img设置</string>
-				<key>withspace</key>
+				<key>concurrently</key>
 				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>/Users/vkyii/.pyenv/versions/2.7.10/bin/python2.7 ./save_img.py -u</string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>BE152935-4073-489A-8624-D4410C803C1B</string>
+			<string>8BFF9926-79DA-413A-A4EB-63DB997DF739</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -148,6 +127,27 @@ util.open_with_editor(util.CONFIG_FILE)</string>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>mdimgsetup</string>
+				<key>subtext</key>
+				<string>设置markdown图片上传图床的信息</string>
+				<key>text</key>
+				<string>markdown img设置</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>BE152935-4073-489A-8624-D4410C803C1B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
 				<integer>102</integer>
@@ -162,18 +162,18 @@ util.open_with_editor(util.CONFIG_FILE)</string>
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>"s" save to local, "u" upload to server</string>
+				<string>"pri" save to private_path, "pub" save to public_path, "qn" upload to qiniu server</string>
 				<key>script</key>
 				<string>#!/bin/sh
 
 #check the input and display the relative title
 PAR={query}
-if [ $PAR = "s" ] ; then
-	title="Save to local"
-elif [ $PAR = "u" ]; then
-	title="Upload to server"
-elif [ $PAR = "a" ]; then
-	title="Save to local And Upload to server"
+if [ $PAR = "pri" ] ; then
+	title="Save to private_path"
+elif [ $PAR = "pub" ] ; then
+	title="Save to public_path"
+elif [ $PAR = "qn" ]; then
+	title="Upload to Qiniu server"
 else
 	title="Parameter not correct"
 fi
@@ -183,7 +183,7 @@ echo "&lt;item arg=\"{query}\" uid=\"ssid\" valid=\"yes\"&gt;"
 echo "&lt;title&gt;$title&lt;/title&gt;"
 echo "&lt;subtitle&gt;$subtitle&lt;/subtitle&gt;"
 echo "&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;&lt;/items&gt;"
-echo "&lt;/items&gt;"</string>
+</string>
 				<key>subtext</key>
 				<string>Save image to local or server</string>
 				<key>title</key>
@@ -208,7 +208,7 @@ echo "&lt;/items&gt;"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>script</key>
-				<string>/Users/vkyii/.pyenv/versions/2.7.10/bin/python2.7 ./save_img.py -"{query}"</string>
+				<string>/Users/vkyii/.pyenv/versions/2.7.10/bin/python2.7 ./save_img.py --"{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
