@@ -7,7 +7,7 @@ diff -rupN /Users/vkyii/Library/Application Support/Sublime Text 3/Packages/Omni
              if (len(o.scheme) > 0 and o.scheme != 'file') or url.startswith('//'):
                  # Is a valid url, returns original text
                  return m.group(0)
-+            url = re.sub(r'{{\s*site.img_url\s*}}', '../../assets/img', url)
++            url = re.sub(r'{{\s*site.img_url\s*}}', '../assets/img', url)
              # or local file (maybe?)
              if o.scheme == 'file':
                  local_path = file_uri_to_path(url)
