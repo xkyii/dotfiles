@@ -1,7 +1,5 @@
 
 # export PATH="/usr/local/bin:$PATH"
-export PATH="/Users/vkyii/.multirust/toolchains/stable/cargo/bin:$PATH"
-# export PATH="/Users/vkyii/.cargo/bin:$PATH"
 
 # after install pyenv
 eval "$(pyenv init -)"
@@ -26,6 +24,8 @@ source $HOME/.phpbrew/bashrc
 
 # rust
 export RUST_SRC_PATH="/Users/vkyii/Documents/Code/rust/src/"
+export PATH="$HOME/.cargo/bin:$PATH"
+# source $HOME/.cargo/env
 
 # alias
 alias vscode="/opt/homebrew-cask/Caskroom/visual-studio-code/0.10.5/Visual\ Studio\ Code.app/Contents/MacOS/Electron"

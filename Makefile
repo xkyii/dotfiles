@@ -14,6 +14,7 @@ symlinks:
 	@ln -sf $(DIR)/tmux/tmux.conf ~/.tmux.conf
 	@ln -sf $(DIR)/SublimeText3/Packages/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 	@ln -sf $(DIR)/SublimeText3/Packages/Rust ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+	@ln -sf $(DIR)/VSCode/User ~/Library/Application\ Support/Code
 	@echo "make symlinks DONE!"
 
 diff:
