@@ -1,5 +1,11 @@
 {
 	"color_scheme": "Packages/User/SublimeLinter/Monokai Extended Origin (SL).tmTheme",
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".hg",
+		"CVS"
+	],
 	"ignored_packages":
 	[
 		"MarkdownEditing"
