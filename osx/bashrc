@@ -25,6 +25,7 @@ source $HOME/.phpbrew/bashrc
 # rust
 export RUST_SRC_PATH="/Users/vkyii/Documents/Code/rust/src/"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/share/dotnet:$PATH"
 # source $HOME/.cargo/env
 
 # alias
