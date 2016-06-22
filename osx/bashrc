@@ -14,9 +14,10 @@ eval "$(anyenv init -)"
 # after install homebrew
 export HOMEBREW_GITHUB_API_TOKEN=6b3d4908a0db7bbcab2699b24452bb71ef68d127
 export HOMEBREW_EDITOR=nvim
+export HOMEBREW_CASK_OPTS="$HOMEBREW_CASK_OPTS --caskroom=/opt/homebrew-cask/Caskroom"
 #. /Users/vkyii/.pyenv/versions/3.5.0/lib/python3.5/site-packages/powerline/bindings/bash/powerline.sh
 
-# after install php-version
+# after install php-versiong
 #source $(brew --prefix php-version)/php-version.sh && php-version 5
 
 # after install phpbrew
@@ -25,8 +26,10 @@ source $HOME/.phpbrew/bashrc
 # rust
 export RUST_SRC_PATH="/Users/vkyii/Documents/Code/rust/src/"
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="/usr/local/share/dotnet:$PATH"
 # source $HOME/.cargo/env
+
+# dotnet
+export PATH="/usr/local/share/dotnet:$PATH"
 
 # alias
 alias vscode="/opt/homebrew-cask/Caskroom/visual-studio-code/0.10.5/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
@@ -35,7 +38,7 @@ alias sl="reattach-to-user-namespace subl"
 
 # android
 export ANDROID_HOME="/usr/local/opt/android-sdk"
-
+export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
 
 # toggle iTerm Dock icon
 # add this to your .bash_profile or .zshrc
