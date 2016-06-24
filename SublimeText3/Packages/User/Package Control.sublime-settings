@@ -1,3 +1,30 @@
 {
-	"bootstrapped": true
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Codecs33",
+		"Color Highlighter",
+		"ColorPicker",
+		"ConvertToUTF8",
+		"Emmet",
+		"GitGutter",
+		"HTML-CSS-JS Prettify",
+		"JSX",
+		"LiveReload",
+		"Markdown Extended",
+		"MarkdownEditing",
+		"Monokai Extended",
+		"nginx",
+		"OmniMarkupPreviewer",
+		"Package Control",
+		"PackageResourceViewer",
+		"SFTP",
+		"SublimeLinter",
+		"SublimeLinter-contrib-rustc",
+		"SyncedSidebarBg",
+		"TOML"
+	]
 }

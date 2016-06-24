@@ -17,6 +17,7 @@ symlinks:
 	@ln -sf $(DIR)/zsh/vk_custom ~/.oh-my-zsh
 	#@ln -sf $(DIR)/nvim ~/.config/
 	@ln -sf $(DIR)/tmux/tmux.conf ~/.tmux.conf
+	@echo "Check Package Control.sublime-settings -> installed_packages for missing Packages"
 	@ln -sf $(DIR)/SublimeText3/Packages/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 	@ln -sf $(DIR)/SublimeText3/Packages/Rust ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 	@ln -sf $(DIR)/VSCode/User ~/Library/Application\ Support/Code
@@ -40,6 +41,7 @@ install-homebrew:
 	brew tap vkyii/tap
 
 install-soft: su
+	brew install git
 	brew install proxychains-ng
 	brew cask install sublime-text
 	brew cask install sourcetree
@@ -53,6 +55,8 @@ install-sh:
 	brew install zsh
 	brew install tmux
 	brew cask install iterm2
+	@/usr/libexec/PlistBuddy -c 'Add :LSUIElement bool true' /Applications/iTerm.app/Contents/Info.plist # remove from Dock
+	# @/usr/libexec/PlistBuddy -c 'Delete :LSUIElement' /Applications/iTerm.app/Contents/Info.plist # restore
 	@echo "change default zsh"
 	sudo dscl . -delete /Users/${USER} UserShell
 	sudo dscl . -append /Users/${USER} UserShell $(shell which zsh)

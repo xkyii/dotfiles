@@ -1,3 +1,7 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme"
+	"color_scheme": "Packages/User/SublimeLinter/Solarized (Dark) (SL).tmTheme",
+	"ignored_packages":
+	[
+		"Vintage"
+	]
 }
