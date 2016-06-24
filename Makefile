@@ -15,6 +15,7 @@ symlinks:
 	@ln -sf $(DIR)/zsh/zshrc ~/.zshrc
 	@ln -sf $(DIR)/zsh/zlogin ~/.zlogin
 	@ln -sf $(DIR)/zsh/vk_custom ~/.oh-my-zsh
+	@ln -sf $(DIR)/proxychains-ng/proxychains.conf /usr/local/etc/proxychains.conf
 	#@ln -sf $(DIR)/nvim ~/.config/
 	@ln -sf $(DIR)/tmux/tmux.conf ~/.tmux.conf
 	@echo "Check Package Control.sublime-settings -> installed_packages for missing Packages"
@@ -90,8 +91,11 @@ env-react-native:
 
 env-android: su
 	brew cask install virtualbox
-	brew cask install https://raw.githubusercontent.com/vkyii/homebrew-tap/master/Casks/genymotion.rb
+	brew cask install genymotion2.6
 	brew install android-sdk
+	brew unlink android-sdk
+	brew install android-platform-tools
+	brew link --overwrite --dry-run android-sdk
 
 env-react-native-android : env-android env-react-native
 	echo "See https://facebook.github.io/react-native/docs/getting-started.html#content"
