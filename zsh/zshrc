@@ -1,6 +1,6 @@
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/vkyii/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -95,7 +95,7 @@ autoload bashcompinit
 bashcompinit
  
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/vkyii/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 # autoload -U compinit
 # compinstall
