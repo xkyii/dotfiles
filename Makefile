@@ -43,11 +43,13 @@ install-homebrew:
 
 install-soft: su
 	brew install git
+	brew install wget
 	brew install proxychains-ng
 	brew cask install sublime-text
 	brew cask install sourcetree
 	brew cask install shadowsocksx
 	brew cask install qq
+	brew cask install qqinput
 	brew cask install neteasemusic
 	brew cask install alfred
 
@@ -55,6 +57,7 @@ install-sh:
 	brew install z
 	brew install zsh
 	brew install tmux
+	brew install reattach-to-user-namespace  # 可在tmux正常用subl打开文件[夹]
 	brew cask install iterm2
 	@/usr/libexec/PlistBuddy -c 'Add :LSUIElement bool true' /Applications/iTerm.app/Contents/Info.plist # remove from Dock
 	# @/usr/libexec/PlistBuddy -c 'Delete :LSUIElement' /Applications/iTerm.app/Contents/Info.plist # restore
@@ -98,5 +101,5 @@ env-android: su
 	brew link --overwrite --dry-run android-sdk
 
 env-react-native-android : env-android env-react-native
-	echo "See https://facebook.github.io/react-native/docs/getting-started.html#content"
+	@echo "See https://facebook.github.io/react-native/docs/getting-started.html#content"
 
