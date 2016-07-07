@@ -96,9 +96,7 @@ env-android: su
 	brew cask install virtualbox
 	brew cask install genymotion2.6
 	brew install android-sdk
-	brew unlink android-sdk
-	brew install android-platform-tools
-	brew link --overwrite --dry-run android-sdk
+	brew install android-ndk
 
 env-react-native-android : env-android env-react-native
 	@echo "See https://facebook.github.io/react-native/docs/getting-started.html#content"
