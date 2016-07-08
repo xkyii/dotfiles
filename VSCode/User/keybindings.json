@@ -1,16 +1,37 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-    { "key": "cmd+k cmd+b",                 "command": "workbench.action.toggleSidebarVisibility" },
-    { "key": "cmd+b",          "command": "rust.cargo.build.debug",
-                                        "when": "editorLangId == 'rust'" },
-    { "key": "cmd+t",          "command": "rust.cargo.test.debug",
-                                        "when": "editorLangId == 'rust'" },
-    { "key": "cmd+r",          "command": "rust.cargo.run.debug",
-                                        "when": "editorLangId == 'rust'" },
-    { "key": "ctrl+shift+alt+b",      "command": "rust.cargo.build.release",
-                                        "when": "editorLangId == 'rust'" },
-    { "key": "ctrl+shift+alt+t",      "command": "rust.cargo.test.release",
-                                        "when": "editorLangId == 'rust'" },
-    { "key": "ctrl+shift+alt+r",      "command": "rust.cargo.run.release",
-                                        "when": "editorLangId == 'rust'" }
+    {
+        "key": "cmd+k cmd+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+b",
+        "command": "rust.cargo.build.debug",
+        "when": "editorLangId == 'rust'"
+    },
+    {
+        "key": "cmd+t",
+        "command": "rust.cargo.test.debug",
+        "when": "editorLangId == 'rust'"
+    },
+    {
+        "key": "cmd+r",
+        "command": "rust.cargo.run.debug",
+        "when": "editorLangId == 'rust'"
+    },
+    {
+        "key": "ctrl+shift+alt+b",
+        "command": "rust.cargo.build.release",
+        "when": "editorLangId == 'rust'"
+    },
+    {
+        "key": "ctrl+shift+alt+t",
+        "command": "rust.cargo.test.release",
+        "when": "editorLangId == 'rust'"
+    },
+    {
+        "key": "ctrl+shift+alt+r",
+        "command": "rust.cargo.run.release",
+        "when": "editorLangId == 'rust'"
+    }
 ]
