@@ -33,7 +33,6 @@ export HOMEBREW_EDITOR=nvim
 export PATH="/usr/local/share/dotnet:$PATH"
 
 # alias
-alias vscode="/opt/homebrew-cask/Caskroom/visual-studio-code/0.10.5/Visual\ Studio\ Code.app/Contents/MacOS/Electron"
 alias vlc="/opt/homebrew-cask/Caskroom/vlc/2.2.2/VLC.app/Contents/MacOS/VLC"
 alias sl="reattach-to-user-namespace subl"
 

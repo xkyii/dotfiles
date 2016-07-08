@@ -23,6 +23,7 @@ symlinks:
 	@ln -sf $(DIR)/SublimeText3/Packages/Rust ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 	@ln -sf $(DIR)/VSCode/User ~/Library/Application\ Support/Code
 	@ln -sf $(DIR)/alfred/Alfred.alfredpreferences  ~/Library/Application\ Support/Alfred\ 3
+	@ln -sf $(DIR)/osx/gemrc ~/.gemrc
 	@echo "make symlinks DONE!"
 
 diff:
@@ -80,6 +81,9 @@ install-sh:
 
 anyenv:
 	git clone https://github.com/riywo/anyenv ~/.anyenv
+
+env-ruby:
+	anyenv install rbenv
 
 env-java:
 	anyenv install jenv
