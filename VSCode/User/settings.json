@@ -23,5 +23,10 @@
     "rust.cargoHomePath": null, // Path to Cargo home directory, mostly needed for racer. Needed only if using custom rust installation.
     "rust.formatOnSave": false, // Turn on/off autoformatting file on save (EXPERIMENTAL)
     "rust.checkOnSave": false, // Turn on/off `cargo check` project on save (EXPERIMENTAL)
-    "rust.checkWith": "build" // Specifies the linter to use. (EXPERIMENTAL)
+    "rust.checkWith": "build", // Specifies the linter to use. (EXPERIMENTAL)
+
+    // 禁用系统默认的javascript验证,启用ESlint验证
+    "javascript.validate.enable": false,
+    "eslint.enable": true
+
 }
