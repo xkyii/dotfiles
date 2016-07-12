@@ -7,7 +7,7 @@
     // Controls the font size.
     // "editor.fontSize": 14,
     
-    "git.enabled": false,
+    "git.enabled": true,
     
     // 控制编辑器是否应呈现空白字符
     "editor.renderWhitespace": true,
