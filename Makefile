@@ -84,14 +84,25 @@ anyenv:
 
 env-ruby:
 	anyenv install rbenv
+	@exec $SHELL -l
 
 env-java:
 	anyenv install jenv
 	@exec $SHELL -l
 	brew cask install java
 
-env-react-native:
+# [node](https://nodejs.org/en/)
+env-nodejs:
 	brew install node
+
+# [mac](https://docs.asp.net/en/latest/tutorials/your-first-mac-aspnet.html)
+# [yeoman](https://docs.asp.net/en/latest/client-side/yeoman.html)
+env-dotnet: su env-nodejs
+	brew cask install dotnet
+	npm install -g yo bower grunt-cli gulp
+	npm install -g generator-aspnet
+
+env-react-native: env-nodejs
 	brew install watchman
 	brew install flow
 	npm install -g react-native-cli
