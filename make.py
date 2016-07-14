@@ -36,6 +36,7 @@ class Installer(object):
     def dotnet(self):
         print("install dotnet ...")
         self._brew_cask_install("dotnet")
+        self._call("brew link --force openssl")
         self._call("npm install -g yo bower grunt-cli gulp")
         self._call("npm install -g generator-aspnet")
 

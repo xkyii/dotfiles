@@ -3,18 +3,15 @@
     // Controls the font family.
     //"editor.fontFamily": "WenQuanYi Zen Hei Mono",
     // "editor.fontFamily": "Ubuntu Mono",
-    
     // Controls the font size.
     // "editor.fontSize": 14,
-    
+    // Controls the font family of the terminal, this defaults to editor.fontFamily's value.
+    "terminal.integrated.fontFamily": "Menlo for Powerline",
     "git.enabled": true,
-    
     // 控制编辑器是否应呈现空白字符
     "editor.renderWhitespace": true,
-
     // 一个制表符等于的空格数。
     "editor.tabSize": 4,
-
     // RustyCode
     "rust.racerPath": null, // Specifies path to Racer binary if it's not in PATH
     "rust.rustLangSrcPath": null, // Specifies path to /src directory of local copy of Rust sources
@@ -24,9 +21,7 @@
     "rust.formatOnSave": false, // Turn on/off autoformatting file on save (EXPERIMENTAL)
     "rust.checkOnSave": false, // Turn on/off `cargo check` project on save (EXPERIMENTAL)
     "rust.checkWith": "build", // Specifies the linter to use. (EXPERIMENTAL)
-
     // 禁用系统默认的javascript验证,启用ESlint验证
     "javascript.validate.enable": false,
     "eslint.enable": true
-
 }
