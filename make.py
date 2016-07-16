@@ -53,7 +53,7 @@ class Installer(object):
         # fix workflow mi
         self._call("pip install requests")
         self._call("pip install decopt")
-        self._call("pip install pyobjc")
+        self._call("pip install pyobjc")  # take a long time
 
 
 def Usage():
