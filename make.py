@@ -48,6 +48,13 @@ class Installer(object):
         self._call("pyenv global 3.5.2")
         self._call("pyenv rehash")
 
+    def alfred(self):
+        self._brew_cask_install("alfred")
+        # fix workflow mi
+        self._call("pip install requests")
+        self._call("pip install decopt")
+        self._call("pip install pyobjc")
+
 
 def Usage():
     print("Usage of make dotfiles")
