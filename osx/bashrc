@@ -2,7 +2,7 @@
 # export PATH="/usr/local/bin:$PATH"
 
 # after install pyenv
-#eval "$(pyenv init -)"
+eval "$(pyenv init -)"
 #export PYTHON_BUILD_MIRROR_URL="http://pyenv.qiniudn.com/pythons/"
 
 # after install rbenv

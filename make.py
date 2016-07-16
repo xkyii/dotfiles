@@ -40,6 +40,14 @@ class Installer(object):
         self._call("npm install -g yo bower grunt-cli gulp")
         self._call("npm install -g generator-aspnet")
 
+    def python3(self):
+        print("install python3 ...")
+        self._call("anyenv install -s pyenv")
+        self._call("source ~/.bashrc")
+        self._call("pyenv install -s 3.5.2")
+        self._call("pyenv global 3.5.2")
+        self._call("pyenv rehash")
+
 
 def Usage():
     print("Usage of make dotfiles")
@@ -55,8 +63,8 @@ def ls():
 def main(argv):
     try:
         opts, args = getopt.getopt(argv, "hvi:", ["install="])
-    except getopt.GetoptError, err:
-        print str(err)
+    except getopt.GetoptError as err:
+        print(err)
         Usage()
         sys.exit(2)
 
@@ -76,4 +84,5 @@ def main(argv):
     print("Done.")
 
 if __name__ == '__main__':
+    print(sys.version)
     main(sys.argv[1:])
