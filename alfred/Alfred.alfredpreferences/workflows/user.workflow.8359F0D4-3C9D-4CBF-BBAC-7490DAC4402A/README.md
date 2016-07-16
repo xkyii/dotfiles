@@ -13,6 +13,13 @@
 
 上传完成之后，返回的图片链接自动放入到系统剪切版中，可以直接使用`cmd + V` 使用。
 
+## 依赖
+
+```shell
+pip install docopt
+pip install pyobjc
+```
+
 ## 预览
 
 1. 极速截图转图片链接
