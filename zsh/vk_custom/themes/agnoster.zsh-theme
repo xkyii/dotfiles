@@ -205,8 +205,8 @@ build_prompt() {
   prompt_status
   prompt_virtualenv
   prompt_context
-  prompt_dir
   prompt_git
+  prompt_dir
   prompt_hg
   prompt_end
   prompt_post

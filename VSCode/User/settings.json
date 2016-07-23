@@ -1,7 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
     // Controls the font family.
-    //"editor.fontFamily": "WenQuanYi Zen Hei Mono",
+    // "editor.fontFamily": "mononoki",
     // "editor.fontFamily": "Ubuntu Mono",
     // Controls the font size.
     // "editor.fontSize": 14,

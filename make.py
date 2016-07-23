@@ -55,6 +55,11 @@ class Installer(object):
         self._call("pip install decopt")
         self._call("pip install pyobjc")  # take a long time
 
+    def soft(self):
+        self._brew_cask_install("licecap")  # [gif录屏](http://www.cockos.com/licecap/)
+        self._brew_cask_install("gimp")     # [图片编辑](http://www.gimp.org/)
+        self._brew_cask_install("vox")      # [听歌软件](http://coppertino.com/)
+
 
 def Usage():
     print("Usage of make dotfiles")

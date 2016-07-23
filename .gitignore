@@ -13,3 +13,4 @@ alfred/Alfred.alfredpreferences/workflows/user.workflow.8359F0D4-3C9D-4CBF-BBAC-
 VSCode/User/workspaceStorage
 
 *.pyc
+.vscode
