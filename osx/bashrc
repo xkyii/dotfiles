@@ -33,7 +33,7 @@ export HOMEBREW_EDITOR=nvim
 export PATH="/usr/local/share/dotnet:$PATH"
 
 # alias
-alias vlc="/opt/homebrew-cask/Caskroom/vlc/2.2.2/VLC.app/Contents/MacOS/VLC"
+# alias vlc="/opt/homebrew-cask/Caskroom/vlc/2.2.2/VLC.app/Contents/MacOS/VLC"
 alias sl="reattach-to-user-namespace subl"
 
 # android
