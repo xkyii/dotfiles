@@ -48,6 +48,10 @@ class Installer(object):
         self._call("pyenv global 3.5.2")
         self._call("pyenv rehash")
 
+    def tushare(self):
+        print("install tushare ...")
+        self._call("pip install lxml pandas tushare")
+
     def alfred(self):
         self._brew_cask_install("alfred")
         # fix workflow mi
