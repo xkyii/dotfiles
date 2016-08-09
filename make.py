@@ -92,6 +92,9 @@ def main(argv):
             print("make", __version__)
         elif o in ("-i", "--install"):
             getattr(Installer(), arg)()
+        else:
+            Usage()
+            sys.exit(0)
 
     for arg in args:
         if arg == "ls":
