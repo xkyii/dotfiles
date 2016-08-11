@@ -1,11 +1,11 @@
 # -*- coding: utf-8
 import os, re, subprocess
-import ConfigParser
+import configparser
 from tempfile import NamedTemporaryFile
 
 CONFIG_FILE = 'config.ini'
 
-def notice(msg, title="notice"): 
+def notice(msg, title="notice"):
     ''' notoce message in notification center'''
     os.system('osascript -e \'display notification "%s" with title "%s"\'' % (msg, title))
 
@@ -13,19 +13,20 @@ def read_config():
     ''' read congig from config.ini, return a five tuple'''
     if not os.path.exists(CONFIG_FILE):
         return
-    cf = ConfigParser.ConfigParser()
+    cf = configparser.ConfigParser()
     cf.read(CONFIG_FILE)
 
     qiniu_section = 'qiniu'
-    keys = ('ak', 'sk', 'url', 'bucket', 'local', 'private_path', 'public_path')
-    try:
-        res = map(lambda x: cf.get(qiniu_section, x), keys)
-    except ConfigParser.NoOptionError:
-        return
-    
-    if not all(map(lambda x: re.match(r'[/]?\w+', x), res)):
-        return
-    return dict(zip(keys, res))
+    return dict(cf.items(qiniu_section))
+    # keys = ('ak', 'sk', 'url', 'bucket', 'local', 'private_path', 'public_path')
+    # try:
+    #     res = map(lambda x: cf.get(qiniu_section, x), keys)
+    # except configparser.NoOptionError:
+    #     return
+
+    # if not all(map(lambda x: re.match(r'[/]?\w+', x), res)):
+    #     return
+    # return dict(zip(keys, res))
 
 def open_with_editor(filepath):
     ''' open file with apple's text editor'''
