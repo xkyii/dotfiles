@@ -7,10 +7,11 @@ eval "$(anyenv init -)"
 
 # after install pyenv
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 #export PYTHON_BUILD_MIRROR_URL="http://pyenv.qiniudn.com/pythons/"
 
 # after install rbenv
-#eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 # after install homebrew
 export HOMEBREW_GITHUB_API_TOKEN=6b3d4908a0db7bbcab2699b24452bb71ef68d127
@@ -46,7 +47,7 @@ export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
 function toggleiTerm() {
 	pb='/usr/libexec/PlistBuddy'
 	iTerm='/opt/homebrew-cask/Caskroom/iterm2/2.1.4/iTerm.app/Contents/Info.plist'
-	
+
 	echo "Do you wish to hide iTerm in Dock?"
 	select ync in "Hide" "Show" "Cancel"; do
 	    case $ync in
