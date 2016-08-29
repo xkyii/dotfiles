@@ -203,7 +203,7 @@ build_prompt() {
   RETVAL=$?
   prompt_pre
   prompt_status
-  prompt_virtualenv
+  #prompt_virtualenv
   prompt_context
   prompt_git
   prompt_dir
@@ -213,3 +213,5 @@ build_prompt() {
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
+
+export VIRTUAL_ENV_DISABLE_PROMPT=yes

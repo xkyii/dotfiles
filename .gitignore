@@ -14,3 +14,5 @@ VSCode/User/workspaceStorage
 
 *.pyc
 .vscode
+SublimeText3/Packages/User/Package Control.cache
+ftp-simple.json
