@@ -64,6 +64,13 @@ class Installer(object):
         self._brew_cask_install("gimp")     # [图片编辑](http://www.gimp.org/)
         self._brew_cask_install("vox")      # [听歌软件](http://coppertino.com/)
 
+    def vscode(self):
+        self._brew_cask_install("visual-studio-code")
+        self._call("npm install -g typings")
+        # for react/react-native jsx emmet
+        self._call("typings install dt~react --global")
+        self._call("typings install dt~react-native --global")
+
 
 def Usage():
     print("Usage of make dotfiles")

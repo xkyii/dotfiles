@@ -1,13 +1,11 @@
-Binary files /Users/vkyii/Library/Application Support/Sublime Text 3/Packages/OmniMarkupPreviewer/.DS_Store and ./SublimeText3/OmniMarkupPreviewer/.DS_Store differ
-Binary files /Users/vkyii/Library/Application Support/Sublime Text 3/Packages/OmniMarkupPreviewer/OmniMarkupLib/.DS_Store and ./SublimeText3/OmniMarkupPreviewer/OmniMarkupLib/.DS_Store differ
-diff -rupN /Users/vkyii/Library/Application Support/Sublime Text 3/Packages/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py ./SublimeText3/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py
---- /Users/vkyii/Library/Application Support/Sublime Text 3/Packages/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py	2016-04-13 09:37:28.000000000 +0800
-+++ ./SublimeText3/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py	2016-04-13 09:39:19.000000000 +0800
-@@ -281,6 +281,7 @@ class RendererManager(object):
+diff -rupN /Users/lbo/Library/Application Support/Sublime Text 3/Packages/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py /vkyii/Code/dotfiles/SublimeText3/Packages/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py
+--- /Users/lbo/Library/Application Support/Sublime Text 3/Packages/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py	2016-08-30 11:07:15.000000000 +0800
++++ /vkyii/Code/dotfiles/SublimeText3/Packages/OmniMarkupPreviewer/OmniMarkupLib/RendererManager.py	2016-08-30 11:06:09.000000000 +0800
+@@ -281,7 +281,6 @@ class RendererManager(object):
              if (len(o.scheme) > 0 and o.scheme != 'file') or url.startswith('//'):
                  # Is a valid url, returns original text
                  return m.group(0)
-+            url = re.sub(r'{{\s*site.img_url\s*}}', '../assets/img', url)
+-            url = '../..' + url
              # or local file (maybe?)
              if o.scheme == 'file':
                  local_path = file_uri_to_path(url)

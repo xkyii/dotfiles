@@ -17,6 +17,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>BE152935-4073-489A-8624-D4410C803C1B</key>
@@ -28,6 +30,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 		<key>BFDF4168-77CE-47F2-AA9F-9D897816E273</key>
@@ -39,6 +43,8 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 	</dict>
@@ -77,7 +83,7 @@
 			<key>uid</key>
 			<string>AFB4A236-0658-4EC5-BA89-1CCF93C2A4A3</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -88,6 +94,10 @@
 				<integer>68</integer>
 				<key>script</key>
 				<string>/Users/vkyii/.pyenv/versions/2.7.10/bin/python2.7 ./save_img.py -u</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -96,7 +106,7 @@
 			<key>uid</key>
 			<string>8BFF9926-79DA-413A-A4EB-63DB997DF739</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -113,6 +123,10 @@ if not os.path.exists(util.CONFIG_FILE):
     util.generate_config_file()
 
 util.open_with_editor(util.CONFIG_FILE)</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>type</key>
 				<integer>3</integer>
 			</dict>
@@ -121,7 +135,7 @@ util.open_with_editor(util.CONFIG_FILE)</string>
 			<key>uid</key>
 			<string>D8445579-037E-4FFF-84EA-61E88AF60C5A</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -142,11 +156,36 @@ util.open_with_editor(util.CONFIG_FILE)</string>
 			<key>uid</key>
 			<string>BE152935-4073-489A-8624-D4410C803C1B</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>/Users/lbo/.anyenv/envs/pyenv/versions/anaconda3-4.1.0/python.app/Contents/MacOS/python ./save_img.py --"{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A190910C-1784-41B7-9CDD-6C796907116A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -184,6 +223,10 @@ echo "&lt;title&gt;$title&lt;/title&gt;"
 echo "&lt;subtitle&gt;$subtitle&lt;/subtitle&gt;"
 echo "&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;&lt;/items&gt;"
 </string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>subtext</key>
 				<string>Save image to local or server</string>
 				<key>title</key>
@@ -198,26 +241,7 @@ echo "&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;&lt;/items&gt;"
 			<key>uid</key>
 			<string>BFDF4168-77CE-47F2-AA9F-9D897816E273</string>
 			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>script</key>
-				<string>/Users/vkyii/.pyenv/versions/2.7.10/bin/python2.7 ./save_img.py --"{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>A190910C-1784-41B7-9CDD-6C796907116A</string>
-			<key>version</key>
-			<integer>0</integer>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -226,31 +250,43 @@ echo "&lt;icon&gt;icon.png&lt;/icon&gt;&lt;/item&gt;&lt;/items&gt;"
 	<dict>
 		<key>8BFF9926-79DA-413A-A4EB-63DB997DF739</key>
 		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
 		<key>A190910C-1784-41B7-9CDD-6C796907116A</key>
 		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
 			<key>ypos</key>
 			<real>270</real>
 		</dict>
 		<key>AFB4A236-0658-4EC5-BA89-1CCF93C2A4A3</key>
 		<dict>
+			<key>xpos</key>
+			<integer>100</integer>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
 		<key>BE152935-4073-489A-8624-D4410C803C1B</key>
 		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
 			<key>ypos</key>
 			<real>150</real>
 		</dict>
 		<key>BFDF4168-77CE-47F2-AA9F-9D897816E273</key>
 		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
 			<key>ypos</key>
 			<real>270</real>
 		</dict>
 		<key>D8445579-037E-4FFF-84EA-61E88AF60C5A</key>
 		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
 			<key>ypos</key>
 			<real>150</real>
 		</dict>

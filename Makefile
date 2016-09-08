@@ -16,7 +16,7 @@ symlinks:
 	@ln -sf $(DIR)/zsh/zlogin ~/.zlogin
 	@ln -sf $(DIR)/zsh/vk_custom ~/.oh-my-zsh
 	@ln -sf $(DIR)/proxychains-ng/proxychains.conf /usr/local/etc/proxychains.conf
-	#@ln -sf $(DIR)/nvim ~/.config/
+	@ln -sf $(DIR)/nvim ~/.config/
 	@ln -sf $(DIR)/tmux/tmux.conf ~/.tmux.conf
 	@echo "Check Package Control.sublime-settings -> installed_packages for missing Packages"
 	@ln -sf $(DIR)/SublimeText3/Packages/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
@@ -27,7 +27,7 @@ symlinks:
 	@echo "make symlinks DONE!"
 
 diff:
-	@diff $(Sublime3DIR)/Packages/OmniMarkupPreviewer $(DIR)/SublimeText3/OmniMarkupPreviewer  > $(DIR)/SublimeText3/Patch/OmniMarkupPreviewer.patch -rupN
+	@diff $(Sublime3DIR)/Packages/OmniMarkupPreviewer $(DIR)/SublimeText3/Packages/OmniMarkupPreviewer  > $(DIR)/SublimeText3/Patch/OmniMarkupPreviewer.patch -rupN
 
 patch:
 	@patch -d $(Sublime3DIR)/Packages/OmniMarkupPreviewer -p0 < $(DIR)/SublimeText3/Patch/OmniMarkupPreviewer.patch
