@@ -27,8 +27,25 @@
     "rust.checkWith": "build", // Specifies the linter to use. (EXPERIMENTAL)
     // 禁用系统默认的javascript验证,启用ESlint验证
     "javascript.validate.enable": false,
-    "eslint.enable": true
+    "eslint.enable": true,
     // "emmet.syntaxProfiles": {
     //     "javascript": "html"
     //  }
+
+    // 其中 emmet 缩写不应展开的语言数组。
+    "emmet.excludeLanguages": ["php"],
+
+    "crane.showStatusBarBugReportLink": false,
+
+    // 配置是否从更新通道接收自动更新。更改后需要重启。
+    "update.channel": "none", // default/none
+
+
+// PHP CodeSniffer configuration
+
+    // Control whether phpcs is enabled for PHP files or not.
+    "phpcs.enable": false,
+
+    // Optional. The name or path of the coding standard to use. Defaults to the one set in phpcs global config.
+    "phpcs.standard": null
 }
