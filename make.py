@@ -71,6 +71,15 @@ class Installer(object):
         self._call("typings install dt~react --global")
         self._call("typings install dt~react-native --global")
 
+    def cocoapods(self):
+        # https://cnbin.github.io/blog/2015/05/25/cocoapods-an-zhuang-he-shi-yong/
+        # 去掉原始源
+        self._call("gem sources --remove https://rubygems.org/")
+        # 改为淘宝源
+        self._call("gem sources -a http://rubygems-china.oss.aliyuncs.com")
+        # 安装
+        self._call("sudo gem install cocoapods")
+
 
 def Usage():
     print("Usage of make dotfiles")
