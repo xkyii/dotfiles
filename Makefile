@@ -10,6 +10,14 @@ su:
 	@sudo -v
 	while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+ln-zsh:
+	@ln -sf $(DIR)/zsh/zshrc ~/.zshrc
+	@ln -sf $(DIR)/zsh/zlogin ~/.zlogin
+	@ln -sf $(DIR)/zsh/vk_custom ~/.oh-my-zsh
+
+ln-bash:
+	@ln -sf $(DIR)/osx/bashrc ~/.bashrc
+
 symlinks:
 	@ln -sf $(DIR)/osx/bashrc ~/.bashrc
 	@ln -sf $(DIR)/zsh/zshrc ~/.zshrc
