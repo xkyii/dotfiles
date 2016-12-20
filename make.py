@@ -80,6 +80,16 @@ class Installer(object):
         # 安装
         self._call("sudo gem install cocoapods")
 
+    def phpenv(self):
+        # https://tom-konda.github.io/blog/2016/01/13/construct-phpenv-for-mac.html
+        # brew install re2c libjpeg libpng libmcrypt
+        # brew install autoconf
+        # brew install libxml2
+        # brew link libxml2 --force
+        # brew install openssl
+        # brew link --force openssl
+        pass
+
 
 def Usage():
     print("Usage of make dotfiles")
