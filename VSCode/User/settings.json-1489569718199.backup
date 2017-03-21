@@ -10,11 +10,11 @@
     // 控制编辑器是否应呈现空白字符
     "editor.renderWhitespace": "boundary",
     // 一个制表符等于的空格数。
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     // 启用后，将在保存文件时剪裁尾随空格。
     "files.trimTrailingWhitespace": true,
     // 控制在多少个字符后编辑器会自动换到下一行。将其设置为 0 则将打开视区宽度换行(自动换行)。将其设置为 -1 则将强制编辑器始终不换行。
-    "editor.wordWrap": "on",
+    "editor.wrappingColumn": 0,
     // RustyCode
     "rust.racerPath": null, // Specifies path to Racer binary if it's not in PATH
     "rust.rustLangSrcPath": null, // Specifies path to /src directory of local copy of Rust sources
@@ -55,9 +55,4 @@
         "**/.DS_Store": true,
         "**/*.meta": true
     },
-    "workbench.colorTheme": "Solarized Dark",
-    "editor.minimap.enabled": false,
-
-    // vim
-    "vim.leader": ",",
-  }
+}
