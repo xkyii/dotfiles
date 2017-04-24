@@ -55,9 +55,12 @@
         "**/.DS_Store": true,
         "**/*.meta": true
     },
-    "workbench.colorTheme": "Solarized Dark",
+    "workbench.colorTheme": "Monokai Dimmed",
     "editor.minimap.enabled": false,
 
     // vim
     "vim.leader": ",",
+    "python.venvPath": "~/.anyenv/envs/pyenv/versions",
+    "python.pythonPath": "~/.anyenv/envs/pyenv/shims",
+    "workbench.iconTheme": "vs-seti"
   }
