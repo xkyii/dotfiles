@@ -55,6 +55,9 @@
         "**/.DS_Store": true,
         "**/*.meta": true
     },
+  "search.exclude": {
+    "**/bower_components": true
+  },
     "workbench.colorTheme": "Monokai Dimmed",
     "editor.minimap.enabled": false,
 
@@ -62,5 +65,11 @@
     "vim.leader": ",",
     "python.venvPath": "~/.anyenv/envs/pyenv/versions",
     "python.pythonPath": "~/.anyenv/envs/pyenv/shims",
-    "workbench.iconTheme": "vs-seti"
-  }
+    "workbench.iconTheme": "vs-seti",
+    "typescript.check.tscVersion": false,
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": true,
+    "window.nativeTabs": false,
+    "workbench.sideBar.location": "left",
+    "window.zoomLevel": 0
+}
