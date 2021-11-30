@@ -1,5 +1,0 @@
-{
-  "run_on_save": false,
-  "show_errors": true,
-  "rustfmt": "/Users/vkyii/.cargo/bin/rustfmt"
-}
