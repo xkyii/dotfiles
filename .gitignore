@@ -17,3 +17,6 @@ VSCode/User/workspaceStorage
 SublimeText3/Packages/User/Package Control.cache
 ftp-simple.json
 SublimeText3/Packages/OmniMarkupPreviewer
+
+.netrwhist
+plugin
