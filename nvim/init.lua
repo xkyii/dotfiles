@@ -7,6 +7,9 @@ require('plugins')
 -- 快捷键映射
 require('keybindings')
 
+-- UI配置
+require('ui')
+
 -- lsp
 -- require('lsp/nvim-cmp-config')
 -- require('lsp/diagnostic_signs')
@@ -26,6 +29,5 @@ vim.cmd[[
 
 -- other
 vim.cmd[[
-  g:nvy = 1
   set guifont=FiraCode\ NF:h14
 ]]
