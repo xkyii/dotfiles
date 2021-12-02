@@ -1,18 +1,21 @@
+
+local Util = require('util')
+local nmap = Util.nmap
+local imap = Util.imap
+local vmap = Util.vmap
+
 -- leader key 为空格
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- 本地变量
-local map = vim.api.nvim_set_keymap
-local opt = {noremap = true, silent = true }
 
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
-map("n", "<C-u>", "9k", opt)
-map("n", "<C-d>", "9j", opt)
+nmap("<C-u>", "9k")
+nmap("<C-d>", "9j")
 
 -- visual模式下缩进代码
-map('v', '<', '<gv', opt)
-map('v', '>', '>gv', opt)
+vmap('<', '<gv')
+vmap('>', '>gv')
 
 ------------------------------------------------------------------
 -- -- windows 分屏快捷键
@@ -32,7 +35,7 @@ map('v', '>', '>gv', opt)
 -- map("n", "sk", ":resize -10<CR>",opt)
 
 -- alt + hjkl  窗口之间跳转
-map("n", "<A-h>", "<C-w>h", opt)
-map("n", "<A-j>", "<C-w>j", opt)
-map("n", "<A-k>", "<C-w>k", opt)
-map("n", "<A-l>", "<C-w>l", opt)
+nmap("<A-h>", "<C-w>h")
+nmap("<A-j>", "<C-w>j")
+nmap("<A-k>", "<C-w>k")
+nmap("<A-l>", "<C-w>l")
