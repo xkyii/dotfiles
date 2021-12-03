@@ -19,7 +19,7 @@ local function _setup()
 
   -- 设定快捷键
   -- Ctrl-Enter -> 切换全屏
-  map('<A-CR>', '<Cmd>luado GuiToggleFullScreen()<CR>')
+  map('<A-CR>', '<Cmd>lua GuiToggleFullScreen()<CR>')
 
   -- 初始非全屏
   vim.fn.GuiWindowFullScreen(false)
